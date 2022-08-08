@@ -1,4 +1,3 @@
-import pytest
 from problems.subsets import subsets
 
 

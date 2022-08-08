@@ -1,4 +1,3 @@
-import pytest
 from problems.longest_substring_without_repeating_characters import (
     length_of_longest_substring,
 )

@@ -1,4 +1,3 @@
-import pytest
 from problems.two_sum import two_sum
 
 

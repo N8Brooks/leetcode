@@ -1,4 +1,3 @@
-import pytest
 from problems.merge_k_sorted_lists import ListNode, merge_k_lists
 
 

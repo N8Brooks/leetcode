@@ -1,4 +1,3 @@
-import pytest
 from problems.valid_parentheses import is_valid
 
 

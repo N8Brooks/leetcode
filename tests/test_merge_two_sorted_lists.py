@@ -1,4 +1,3 @@
-import pytest
 from problems.merge_two_sorted_lists import ListNode, merge_two_lists
 
 
