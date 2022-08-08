@@ -13,7 +13,7 @@ class TreeNode:
     @staticmethod
     def from_vals(vals: List[int]) -> Optional[TreeNode]:
         def helper(i: int):
-            if i >= len(vals):
+            if i >= len(vals) or vals[i] is None:
                 return None
             node = TreeNode(vals[i])
             node.left = helper(2 * i + 1)
