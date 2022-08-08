@@ -1,28 +1,14 @@
-from problems.merge_two_sorted_lists import ListNode, merge_two_lists
-
-
-def to_list(node):
-    result = []
-    while node:
-        result.append(node.val)
-        node = node.next
-    return result
-
-
-def from_list(vals):
-    head = node = ListNode()
-    for val in vals:
-        node.next = node = ListNode(val)
-    return head.next
+from definitions.list_node import ListNode
+from problems.merge_two_sorted_lists import merge_two_lists
 
 
 def test_example_1():
-    list1 = from_list([])
-    list2 = from_list([])
-    assert to_list(merge_two_lists(list1, list2)) == []
+    list1 = list2 = ListNode.from_vals([])
+    actual = merge_two_lists(list1, list2) or []
+    assert actual == []
 
 
 def test_example_2():
-    list1 = from_list([])
-    list2 = from_list([0])
-    assert to_list(merge_two_lists(list1, list2)) == [0]
+    list1 = ListNode.from_vals([])
+    list2 = ListNode.from_vals([0])
+    assert merge_two_lists(list1, list2).to_vals() == [0]

@@ -6,12 +6,18 @@ from typing import List, Optional
 class ListNode:
     """Definition for singly-linked list."""
 
-    def __init__(self, x: int = 0):
+    # pylint: disable=redefined-builtin
+    def __init__(self, x: int = 0, next: Optional[ListNode] = None):
         self.val = x
-        self.next = None
+        self.next = next
 
     @staticmethod
     def from_vals(vals: List[int], pos: Optional[int] = None) -> ListNode:
+        """Creates a linked list from vals in order.
+
+        Keyword arguments:
+        pos -- the index of the last node's next
+        """
         head = node = ListNode(None)
         for val in vals:
             node.next = node = ListNode(val)

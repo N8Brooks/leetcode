@@ -1,25 +1,13 @@
-from problems.merge_k_sorted_lists import ListNode, merge_k_lists
-
-
-def to_list(node):
-    result = []
-    while node:
-        result.append(node.val)
-        node = node.next
-    return result
-
-
-def from_list(vals):
-    head = node = ListNode()
-    for val in vals:
-        node.next = node = ListNode(val)
-    return head.next
+from definitions.list_node import ListNode
+from problems.merge_k_sorted_lists import merge_k_lists
 
 
 def test_example_1():
     lists = [
-        from_list([1, 4, 5]),
-        from_list([1, 3, 4]),
-        from_list([2, 6]),
+        ListNode.from_vals([1, 4, 5]),
+        ListNode.from_vals([1, 3, 4]),
+        ListNode.from_vals([2, 6]),
     ]
-    assert to_list(merge_k_lists(lists)) == [1, 1, 2, 3, 4, 4, 5, 6]
+    actual = merge_k_lists(lists).to_vals()
+    expected = [1, 1, 2, 3, 4, 4, 5, 6]
+    assert actual == expected

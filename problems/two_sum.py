@@ -8,3 +8,4 @@ def two_sum(nums: List[int], target: int) -> List[int]:
         if complement in indices:
             return [indices[complement], i]
         indices[num] = i
+    raise ValueError("no two sum")

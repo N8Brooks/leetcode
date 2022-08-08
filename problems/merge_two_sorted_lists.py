@@ -1,10 +1,6 @@
 from typing import Optional
 
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from definitions.list_node import ListNode
 
 
 def merge_two_lists(
