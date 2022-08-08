@@ -1,14 +1,14 @@
 import pytest
-from problems.valid_parentheses import solution
+from problems.valid_parentheses import is_valid
 
 
 def test_example_1():
-    assert solution("()") == True
+    assert is_valid("()") == True
 
 
 def test_example_2():
-    assert solution("()[]{}") == True
+    assert is_valid("()[]{}") == True
 
 
 def test_example_3():
-    assert solution("(]") == False
+    assert is_valid("(]") == False

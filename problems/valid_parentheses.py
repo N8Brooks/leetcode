@@ -5,7 +5,7 @@ BRACES = {
 }
 
 
-def solution(s: str) -> bool:
+def is_valid(s: str) -> bool:
     stack = []
     for char in s:
         if char in BRACES:

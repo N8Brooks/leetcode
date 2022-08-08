@@ -1,4 +1,4 @@
-def solution(s: str) -> int:
+def length_of_longest_substring(s: str) -> int:
     i = j = 0
     length = 0
     while j < len(s):

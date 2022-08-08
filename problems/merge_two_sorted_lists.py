@@ -7,7 +7,7 @@ class ListNode:
         self.next = next
 
 
-def solution(
+def merge_two_lists(
     list1: Optional[ListNode], list2: Optional[ListNode]
 ) -> Optional[ListNode]:
     head = node = ListNode()
