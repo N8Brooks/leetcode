@@ -1,9 +1,3 @@
-from collections import deque
-
-
 def is_palindrome(s: str) -> bool:
-    s = deque(filter(str.isalnum, s.lower()))
-    while len(s) > 1:
-        if s.popleft() != s.pop():
-            return False
-    return True
+    s = "".join(filter(str.isalnum, s.lower()))
+    return all(s[i] == s[-1 - i] for i in range(len(s) // 2))
