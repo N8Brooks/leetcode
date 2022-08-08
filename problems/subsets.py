@@ -1,4 +1,4 @@
-from itertools import combinations, chain
+from itertools import chain, combinations
 from typing import List
 
 

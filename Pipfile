@@ -7,6 +7,7 @@ name = "pypi"
 pytest = "*"
 
 [dev-packages]
+isort = "*"
 pylint = "*"
 pytest = "*"
 black = "*"
