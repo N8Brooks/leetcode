@@ -4,4 +4,4 @@ from typing import List
 
 
 def max_profit(prices: List[int]) -> int:
-    return max(0, *map(sub, prices, accumulate(prices, min)))
+    return max(map(sub, prices, accumulate(prices, min)), default=0)
