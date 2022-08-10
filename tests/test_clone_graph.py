@@ -16,7 +16,7 @@ def to_adj_list(graph: Node) -> Dict[int, Node]:
     return nodes
 
 
-def assert_nodes_equal(actual_root: Node, expected_root: Node) -> bool:
+def assert_nodes_equal(actual_root: Node, expected_root: Node):
     actual_graph = to_adj_list(actual_root)
     expected_graph = to_adj_list(expected_root)
     for expected in expected_graph.values():
