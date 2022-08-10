@@ -15,6 +15,7 @@ def eval_rpn(tokens: List[str]) -> int:
         elif token == "/":
             operand = trunc(stack.pop() / operand)
         else:
-            stack.append(operand)
+            if operand is not None:
+                stack.append(operand)
             operand = int(token)
     return operand
