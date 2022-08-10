@@ -17,4 +17,4 @@ def test_example_2():
 
 
 def test_example_3():
-    assert level_order([]) == []
+    assert not level_order([])
