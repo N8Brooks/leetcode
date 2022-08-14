@@ -13,5 +13,5 @@ def test_example_2():
 
 
 def test_example_3():
-    actual = invert_tree(TreeNode.from_vals([]))
+    actual = invert_tree(None)
     assert actual.to_vals() if actual else [] == []
