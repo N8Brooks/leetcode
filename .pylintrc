@@ -1,4 +1,4 @@
 [MESSAGES CONTROL]
 
 disable=C0114,C0115,C0116
-good-names=a,b,c,i,j,k,m,n,p,q,s,t,x,y,lo,hi
+good-names=a,b,c,i,j,k,m,n,p,q,r,s,t,x,y,lo,hi
