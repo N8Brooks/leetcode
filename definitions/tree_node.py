@@ -29,6 +29,8 @@ class TreeNode:
             result.extend(node.val if node else None for node in nodes)
             temp = ((node.left, node.right) if node else (None, None) for node in nodes)
             nodes = tuple(chain.from_iterable(temp))
+        while result and result[-1] is None:
+            del result[-1]
         return result
 
     def find(self, val: int) -> Optional[TreeNode]:
