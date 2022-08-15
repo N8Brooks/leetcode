@@ -5,14 +5,21 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@master
     - uses: actions/setup-python@v1
     - uses: dschep/install-pipenv-action@v1
     - run: pipenv install --dev
   format:
+    needs: build
+    steps:
     - run: pipenv run isort . --profile black --check
     - run: pipenv run black . --check
   test:
+    needs: build
+    steps:
     - run: pipenv run pylint **/*.py
   lint:
+    needs: build
+    steps:
     - run: pipenv run pytest --verbose
