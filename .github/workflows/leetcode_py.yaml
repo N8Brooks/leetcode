@@ -2,8 +2,6 @@ name: 'leetcode_py'
 
 on: [push]
 
-description: 'Checks isort, black, pylint, and pytest with pipenv'
-
 jobs:
   build:
     runs-on: ubuntu-latest
