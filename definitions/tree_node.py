@@ -26,7 +26,7 @@ class TreeNode:
         result = []
         nodes = [self]
         while any(nodes):
-            result.extend(node.val for node in nodes)
+            result.extend(node.val if node else None for node in nodes)
             temp = ((node.left, node.right) if node else (None, None) for node in nodes)
             nodes = tuple(chain.from_iterable(temp))
         return result
