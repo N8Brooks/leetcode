@@ -8,6 +8,5 @@ def level_order(root: Optional[TreeNode]) -> List[List[int]]:
     result = []
     while level:
         result.append([node.val for node in level])
-        pairs = ((node.left, node.right) for node in level)
-        level = [node for pair in pairs for node in pair if node]
+        level = [node for node in level for node in (node.left, node.right) if node]
     return result

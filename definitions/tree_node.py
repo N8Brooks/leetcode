@@ -5,7 +5,7 @@ from typing import List, Optional
 
 
 class TreeNode:
-    """Definition for `TreeNode` used in some problems"""
+    """Definition for a binary tree node"""
 
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -14,7 +14,7 @@ class TreeNode:
 
     @staticmethod
     def from_vals(vals: List[int]) -> Optional[TreeNode]:
-        """Creates a root with the given `vals` given row by row left to right"""
+        """`TreeNode` root with the given `vals` given row by row left to right"""
         nodes = {i: TreeNode(val) for i, val in enumerate(vals) if val is not None}
         for i, node in nodes.items():
             node.left = nodes.get(2 * i + 1, None)
@@ -24,7 +24,7 @@ class TreeNode:
     def to_vals(self) -> List[int]:
         """Returns the nodes given in row order traversal from `self`"""
         result = []
-        nodes = [self]
+        nodes = (self,)
         while any(nodes):
             result.extend(node.val if node else None for node in nodes)
             temp = ((node.left, node.right) if node else (None, None) for node in nodes)

@@ -1,7 +1,7 @@
 from typing import List
 
 
-# pylint: disable=[invalid-name]
+# pylint: disable=invalid-name
 def flood_fill(image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
     start = image[sr][sc]
     if color == start:

@@ -4,7 +4,7 @@ from typing import List, Optional
 
 
 class ListNode:
-    """Definition for singly-linked list."""
+    """Definition for singly-linked list"""
 
     # pylint: disable=redefined-builtin
     def __init__(self, x: int = 0, next: Optional[ListNode] = None):
@@ -13,11 +13,7 @@ class ListNode:
 
     @staticmethod
     def from_vals(vals: List[int], pos: Optional[int] = None) -> ListNode:
-        """Creates a linked list from vals in order.
-
-        Keyword arguments:
-        pos -- the index of the last node's next
-        """
+        """Creates a linked list from `vals` in order"""
         head = node = ListNode(None)
         for val in vals:
             node.next = node = ListNode(val)
@@ -29,6 +25,7 @@ class ListNode:
         return head.next
 
     def to_vals(self) -> List[int]:
+        """Converts a singly-linked list to a python `list`"""
         result = []
         node = self
         while node:

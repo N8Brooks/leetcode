@@ -14,4 +14,4 @@ def max_areas(height: List[int]) -> Generator[int, None, None]:
 
 
 def max_area(height: List[int]) -> int:
-    return max(max_areas(height))  # will error when `height` is empty
+    return max(max_areas(height), default=0)

@@ -9,14 +9,10 @@ def oranges_rotting(grid: List[List[int]]) -> int:
     )
     minutes = int(not rotten)
     while rotten:
-        neighbors = (
-            cell
-            for x, y in rotten
-            for cell in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
-        )
         rotten = frozenset(
             (x, y)
-            for x, y in neighbors
+            for x, y in rotten
+            for x, y in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
             if 0 <= x < width and 0 <= y < length and grid[y][x] == 1
         )
         for x, y in rotten:
