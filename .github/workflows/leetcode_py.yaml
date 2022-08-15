@@ -10,13 +10,8 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/setup-python@v1
     - uses: dschep/install-pipenv-action@v1
-    - name: Install
-      run: pipenv install --dev
-    - name: Format
-      run: |
-        pipenv run isort . --profile black --check
-        pipenv run black . --check
-    - name: Lint
-      run: pipenv run pylint **/*.py
-    - name: Test
-      run: pipenv run pytest --verbose
+    - run: pipenv install --dev
+    - run: pipenv run isort . --profile black --check
+    - run: pipenv run black . --check
+    - run: pipenv run pylint **/*.py
+    - run: pipenv run pytest --verbose
