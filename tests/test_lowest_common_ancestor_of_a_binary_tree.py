@@ -1,5 +1,7 @@
 from definitions.tree_node import TreeNode
-from problems.lowest_common_ancestor_of_a_binary_tree import lowest_common_ancestor
+from problems.lowest_common_ancestor_of_a_binary_tree import (
+    lowest_common_ancestor,
+)
 
 
 def test_example_1():
