@@ -16,10 +16,7 @@ class Trie:
     def traverse(self, word: str) -> Graph:
         node = self.graph
         for char in word:
-            if char in node:
-                node = node[char]
-            else:
-                return {}
+            node = node.get(char, {})
         return node
 
     def search(self, word: str) -> bool:
