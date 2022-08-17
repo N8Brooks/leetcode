@@ -9,13 +9,10 @@ def flood_fill(image: List[List[int]], sr: int, sc: int, color: int) -> List[Lis
     fill = {(sr, sc)}
     while fill:
         r, c = fill.pop()
-        image[r][c] = color
-        if r - 1 >= 0 and image[r - 1][c] == start:
+        if 0 <= c < len(image[0]) and 0 <= r < len(image) and image[r][c] == start:
+            image[r][c] = color
             fill.add((r - 1, c))
-        if r + 1 < len(image) and image[r + 1][c] == start:
             fill.add((r + 1, c))
-        if c - 1 >= 0 and image[r][c - 1] == start:
             fill.add((r, c - 1))
-        if c + 1 < len(image[0]) and image[r][c + 1] == start:
             fill.add((r, c + 1))
     return image
