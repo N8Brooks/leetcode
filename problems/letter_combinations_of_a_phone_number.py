@@ -14,4 +14,8 @@ DIGITS = {
 
 
 def letter_combinations(digits: str) -> List[str]:
-    return ["".join(chars) for chars in product(*map(DIGITS.get, digits)) if chars]
+    return (
+        ["".join(chars) for chars in product(*(DIGITS[digit] for digit in digits))]
+        if digits
+        else []
+    )

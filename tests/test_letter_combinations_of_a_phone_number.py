@@ -16,7 +16,7 @@ def test_example_1():
 
 
 def test_example_2():
-    assert letter_combinations("") == []
+    assert not letter_combinations("")
 
 
 def test_example_3():
