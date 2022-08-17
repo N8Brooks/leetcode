@@ -1,15 +1,12 @@
-BRACES = {
-    "(": ")",
-    "{": "}",
-    "[": "]",
-}
-
-
 def is_valid(s: str) -> bool:
     stack = []
     for char in s:
-        if char in BRACES:
-            stack.append(BRACES[char])
+        if char == "(":
+            stack.append(")")
+        elif char == "{":
+            stack.append("}")
+        elif char == "[":
+            stack.append("]")
         elif not stack:
             return False
         elif char != stack.pop():
