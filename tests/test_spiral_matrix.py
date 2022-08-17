@@ -72,3 +72,7 @@ def test_long():
 
 def test_small():
     assert spiral_order([[1, 2], [3, 4]]) == [1, 2, 4, 3]
+
+
+def test_vertical():
+    assert spiral_order([[7], [9], [6]]) == [7, 9, 6]
