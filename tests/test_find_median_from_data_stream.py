@@ -4,14 +4,15 @@ from problems.find_median_from_data_stream import MedianFinder
 def assert_input_correct(instructions, values):
     finder: MedianFinder
     for instruction, value in zip(instructions, values):
-        if instruction == "MedianFinder":
-            finder = MedianFinder()
-        elif instruction == "addNum":
-            finder.add_num(value[0])
-        elif instruction == "findMedian":
-            assert finder.find_median() == value[0]
-        else:
-            raise ValueError(f"{instruction} is not a valid instruction")
+        match instruction:
+            case "MedianFinder":
+                finder = MedianFinder()
+            case "addNum":
+                finder.add_num(value[0])
+            case "findMedian":
+                assert finder.find_median() == value[0]
+            case _:
+                raise ValueError(f"{instruction} is not a valid instruction")
 
 
 def test_example_1() -> None:

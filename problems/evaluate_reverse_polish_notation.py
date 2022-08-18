@@ -6,16 +6,17 @@ def eval_rpn(tokens: List[str]) -> int:
     operand = 0
     stack: List[int] = []
     for token in tokens:
-        if token == "+":
-            operand += stack.pop()
-        elif token == "-":
-            operand = stack.pop() - operand
-        elif token == "*":
-            operand *= stack.pop()
-        elif token == "/":
-            operand = trunc(stack.pop() / operand)
-        else:
-            if operand is not None:
-                stack.append(operand)
-            operand = int(token)
+        match token:
+            case "+":
+                operand += stack.pop()
+            case "-":
+                operand = stack.pop() - operand
+            case "*":
+                operand *= stack.pop()
+            case "/":
+                operand = trunc(stack.pop() / operand)
+            case _:
+                if operand is not None:
+                    stack.append(operand)
+                operand = int(token)
     return operand

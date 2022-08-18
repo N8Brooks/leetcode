@@ -4,16 +4,17 @@ from problems.implement_trie_prefix_tree import Trie
 def assert_input_correct(instructions, values):
     trie: Trie
     for instruction, value in zip(instructions, values):
-        if instruction == "Trie":
-            trie = Trie()
-        elif instruction == "insert":
-            trie.insert(value[0])
-        elif instruction == "search":
-            assert trie.search(value[0]) == value[1]
-        elif instruction == "startsWith":
-            assert trie.starts_with(value[0]) == value[1]
-        else:
-            raise ValueError(f"Invalid instruction {instruction}")
+        match instruction:
+            case "Trie":
+                trie = Trie()
+            case "insert":
+                trie.insert(value[0])
+            case "search":
+                assert trie.search(value[0]) == value[1]
+            case "startsWith":
+                assert trie.starts_with(value[0]) == value[1]
+            case _:
+                raise ValueError(f"Invalid instruction {instruction}")
 
 
 def test_example_1() -> None:

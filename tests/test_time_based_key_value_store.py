@@ -4,14 +4,15 @@ from problems.time_based_key_value_store import TimeMap
 def assert_input_correct(instructions, values):
     time_map: TimeMap
     for instruction, value in zip(instructions, values):
-        if instruction == "TimeMap":
-            time_map = TimeMap()
-        elif instruction == "set":
-            time_map.set(*value)
-        elif instruction == "get":
-            assert time_map.get(value[0], value[1]) == value[2]
-        else:
-            raise ValueError(f"{instruction} is not a valid instruction")
+        match instruction:
+            case "TimeMap":
+                time_map = TimeMap()
+            case "set":
+                time_map.set(*value)
+            case "get":
+                assert time_map.get(value[0], value[1]) == value[2]
+            case _:
+                raise ValueError(f"{instruction} is not a valid instruction")
 
 
 def test_example_1() -> None:

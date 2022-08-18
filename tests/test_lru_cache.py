@@ -4,14 +4,15 @@ from problems.lru_cache import LRUCache
 def assert_input_correct(instructions, values):
     cache: LRUCache
     for instruction, value in zip(instructions, values):
-        if instruction == "LRUCache":
-            cache = LRUCache(value[0])
-        elif instruction == "get":
-            assert cache.get(value[0]) == value[1]
-        elif instruction == "put":
-            cache.put(value[0], value[1])
-        else:
-            raise Exception(f"{instruction} is not a valid instruction")
+        match instruction:
+            case "LRUCache":
+                cache = LRUCache(value[0])
+            case "get":
+                assert cache.get(value[0]) == value[1]
+            case "put":
+                cache.put(value[0], value[1])
+            case _:
+                raise Exception(f"{instruction} is not a valid instruction")
 
 
 def test_example_1() -> None:

@@ -4,18 +4,19 @@ from problems.min_stack import MinStack
 def assert_input_correct(instructions, values):
     stack: MinStack
     for instruction, value in zip(instructions, values):
-        if instruction == "MinStack":
-            stack = MinStack()
-        elif instruction == "push":
-            stack.push(value[0])
-        elif instruction == "pop":
-            assert stack.pop() == value[0]
-        elif instruction == "top":
-            assert stack.top() == value[0]
-        elif instruction == "getMin":
-            assert stack.get_min() == value[0]
-        else:
-            raise ValueError(f"instruction {instruction} is not valid")
+        match instruction:
+            case "MinStack":
+                stack = MinStack()
+            case "push":
+                stack.push(value[0])
+            case "pop":
+                assert stack.pop() == value[0]
+            case "top":
+                assert stack.top() == value[0]
+            case "getMin":
+                assert stack.get_min() == value[0]
+            case _:
+                raise ValueError(f"instruction {instruction} is not valid")
 
 
 def test_example_1() -> None:
