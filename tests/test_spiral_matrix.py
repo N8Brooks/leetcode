@@ -1,7 +1,7 @@
 from problems.spiral_matrix import spiral_order
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert spiral_order([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) == [
         1,
         2,
@@ -15,7 +15,7 @@ def test_example_1():
     ]
 
 
-def test_example_2():
+def test_example_2() -> None:
     assert spiral_order([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]) == [
         1,
         2,
@@ -32,7 +32,7 @@ def test_example_2():
     ]
 
 
-def test_long():
+def test_long() -> None:
     assert spiral_order(
         [
             [1, 2, 3, 4, 5],
@@ -70,9 +70,9 @@ def test_long():
     ]
 
 
-def test_small():
+def test_small() -> None:
     assert spiral_order([[1, 2], [3, 4]]) == [1, 2, 4, 3]
 
 
-def test_vertical():
+def test_vertical() -> None:
     assert spiral_order([[7], [9], [6]]) == [7, 9, 6]

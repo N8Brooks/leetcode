@@ -1,6 +1,9 @@
+from typing import Dict
+
+
 class LRUCache:
     def __init__(self, capacity: int):
-        self.cache = {}
+        self.cache: Dict[int, int] = {}
         self.capacity = capacity
 
     def get(self, key: int) -> int:

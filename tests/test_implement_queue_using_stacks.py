@@ -18,7 +18,7 @@ def assert_input_correct(instructions, values):
             raise ValueError(f"Instruction {instruction} not valid")
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert_input_correct(
         ["MyQueue", "push", "push", "peek", "pop", "empty"],
         [[], [1], [2], [1], [1], [False]],

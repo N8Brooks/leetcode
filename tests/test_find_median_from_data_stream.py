@@ -14,12 +14,12 @@ def assert_input_correct(instructions, values):
             raise ValueError(f"{instruction} is not a valid instruction")
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert_input_correct(
         ["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"],
         [[], [1], [2], [1.5], [3], [2]],
     )
 
 
-def test_one():
+def test_one() -> None:
     assert_input_correct(["MedianFinder", "addNum", "findMedian"], [[], [1], [1]])

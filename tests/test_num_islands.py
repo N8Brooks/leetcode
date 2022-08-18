@@ -1,7 +1,7 @@
 from problems.num_islands import num_islands
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert (
         num_islands(
             [
@@ -15,7 +15,7 @@ def test_example_1():
     )
 
 
-def test_example_2():
+def test_example_2() -> None:
     assert (
         num_islands(
             [
@@ -29,5 +29,5 @@ def test_example_2():
     )
 
 
-def test_one():
+def test_one() -> None:
     assert num_islands([["1"]]) == 1

@@ -1,12 +1,12 @@
-from typing import Optional
+from typing import Dict, List, Optional
 
 from definitions.tree_node import TreeNode
 
 
 def is_balanced(node: Optional[TreeNode]) -> bool:
-    stack = []
+    stack: List[TreeNode] = []
     last = None
-    depths = {}
+    depths: Dict[TreeNode, int] = {}
     while stack or node:
         while node:
             stack.append(node)

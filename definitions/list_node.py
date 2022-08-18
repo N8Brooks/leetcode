@@ -12,22 +12,22 @@ class ListNode:
         self.next = next
 
     @staticmethod
-    def from_vals(vals: List[int], pos: Optional[int] = None) -> ListNode:
+    def from_vals(vals: List[int], pos: Optional[int] = None) -> Optional[ListNode]:
         """Creates a linked list from `vals` in order"""
-        head = node = ListNode(None)
+        head = node = ListNode(-1)
         for val in vals:
             node.next = node = ListNode(val)
         if pos is not None:
             nth = head
             for _ in range(pos):
-                nth = nth.next
+                nth = nth.next  # type: ignore
             node.next = nth
         return head.next
 
     def to_vals(self) -> List[int]:
         """Converts a singly-linked list to a python `list`"""
         result = []
-        node = self
+        node: Optional[ListNode] = self
         while node:
             result.append(node.val)
             node = node.next

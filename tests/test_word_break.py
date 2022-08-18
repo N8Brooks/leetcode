@@ -1,19 +1,19 @@
 from problems.word_break import word_break
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert word_break("leetcode", ["leet", "code"]) is True
 
 
-def test_example_2():
+def test_example_2() -> None:
     assert word_break("applepenapple", ["apple", "pen"]) is True
 
 
-def test_example_3():
+def test_example_3() -> None:
     assert word_break("catsandog", ["cats", "dog", "sand", "and", "cat"]) is False
 
 
-def test_long():
+def test_long() -> None:
     assert (
         word_break(
             "bccdbacdbdacddabbaaaadababadad",

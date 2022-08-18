@@ -3,6 +3,8 @@ from problems.lowest_common_ancestor_of_a_binary_tree import (
     lowest_common_ancestor,
 )
 
+# mypy: ignore-errors
+
 
 def test_example_1():
     root = TreeNode.from_vals([3, 5, 1, 6, 2, 0, 8, None, None, 7, 4])

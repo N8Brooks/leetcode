@@ -16,7 +16,7 @@ def assert_input_correct(instructions, values):
             raise ValueError(f"Invalid instruction {instruction}")
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert_input_correct(
         ["Trie", "insert", "search", "search", "startsWith", "insert", "search"],
         [
@@ -31,7 +31,7 @@ def test_example_1():
     )
 
 
-def test_long():
+def test_long() -> None:
     assert_input_correct(
         [
             "Trie",
@@ -78,5 +78,5 @@ def test_long():
     )
 
 
-def test_empty():
+def test_empty() -> None:
     assert_input_correct(["Trie", "startsWith"], [[], ["a", False]])

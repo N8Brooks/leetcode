@@ -16,4 +16,4 @@ class Node:  # pylint: disable=too-few-public-methods
         nodes = [Node(i + 1) for i in range(len(adj_list))]
         for node, neighbors in zip(nodes, adj_list):
             node.neighbors = [nodes[val - 1] for val in neighbors]
-        return nodes and nodes[0]
+        return nodes[0] if nodes else None

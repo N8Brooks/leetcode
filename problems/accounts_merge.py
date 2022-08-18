@@ -1,5 +1,5 @@
 from bisect import insort
-from typing import List
+from typing import Dict, List
 
 
 def accounts_merge(accounts: List[List[str]]) -> List[List[str]]:
@@ -14,7 +14,7 @@ def accounts_merge(accounts: List[List[str]]) -> List[List[str]]:
             parent[find(email)] = zero
             lookup[email] = name
 
-    groups = {}
+    groups: Dict[str, List[str]] = {}
     for email in parent:
         name = lookup[email]
         zero = find(email)

@@ -1,7 +1,7 @@
 from problems.accounts_merge import accounts_merge
 
 
-def test_example_1():
+def test_example_1() -> None:
     actual = sorted(
         accounts_merge(
             [
@@ -22,7 +22,7 @@ def test_example_1():
     assert actual == expected
 
 
-def test_example_2():
+def test_example_2() -> None:
     actual = sorted(
         accounts_merge(
             [
@@ -46,7 +46,7 @@ def test_example_2():
     assert actual == expected
 
 
-def test_one_account():
+def test_one_account() -> None:
     actual = sorted(
         accounts_merge(
             [
@@ -73,7 +73,7 @@ def test_one_account():
     assert actual == expected
 
 
-def test_many():
+def test_many() -> None:
     actual = sorted(
         accounts_merge(
             [

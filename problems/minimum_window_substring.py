@@ -24,4 +24,4 @@ def len_window(window: slice) -> int:
 
 
 def min_window(s: str, t: str) -> str:
-    return s[min(iter_windows(s, t), key=len_window, default=slice(0, 0))]
+    return s[min(iter_windows(s, t), key=len_window, default=slice(0, 0))]  # type: ignore

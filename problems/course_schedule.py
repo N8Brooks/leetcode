@@ -3,7 +3,7 @@ from typing import List
 
 def can_finish(num_courses: int, prerequisites: List[List[int]]) -> bool:
     indegree = [0] * num_courses
-    graph = [[] for _ in range(num_courses)]
+    graph: List[List[int]] = [[] for _ in range(num_courses)]
     for j, i in prerequisites:
         indegree[j] += 1
         graph[i].append(j)

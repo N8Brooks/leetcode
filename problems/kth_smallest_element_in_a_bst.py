@@ -1,11 +1,11 @@
 from itertools import islice
-from typing import Generator, Iterable, Optional
+from typing import Generator, Iterable, List, Optional
 
 from definitions.tree_node import TreeNode
 
 
 def inorder_traversal(node: Optional[TreeNode]) -> Generator[TreeNode, None, None]:
-    stack = []
+    stack: List[TreeNode] = []
     while node or stack:
         while node:
             stack.append(node)

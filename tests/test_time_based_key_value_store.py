@@ -14,7 +14,7 @@ def assert_input_correct(instructions, values):
             raise ValueError(f"{instruction} is not a valid instruction")
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert_input_correct(
         ["TimeMap", "set", "get", "get", "set", "get", "get"],
         [
@@ -29,7 +29,7 @@ def test_example_1():
     )
 
 
-def test_numbers():
+def test_numbers() -> None:
     assert_input_correct(
         ["TimeMap", "set", "set", "get", "get", "get", "get", "get"],
         [
@@ -46,7 +46,7 @@ def test_numbers():
 
 
 # pylint: disable=line-too-long
-def test_zs():
+def test_zs() -> None:
     assert_input_correct(
         ["TimeMap", "set", "get", "get", "set", "get", "get"],
         [

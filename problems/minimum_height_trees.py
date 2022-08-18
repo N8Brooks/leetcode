@@ -1,10 +1,10 @@
-from typing import List
+from typing import List, Set
 
 
 def find_min_height_trees(n: int, edges: List[List[int]]) -> List[int]:
     if n == 1:
         return [0]
-    adj = [set() for _ in range(n)]
+    adj: List[Set[int]] = [set() for _ in range(n)]
     for i, j in edges:
         adj[i].add(j)
         adj[j].add(i)

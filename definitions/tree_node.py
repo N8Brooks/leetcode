@@ -13,22 +13,22 @@ class TreeNode:
         self.right = right
 
     @staticmethod
-    def from_vals(vals: List[int]) -> Optional[TreeNode]:
+    def from_vals(vals: List[Optional[int]]) -> Optional[TreeNode]:
         """`TreeNode` root with the given `vals` given row by row left to right"""
         nodes = {i: TreeNode(val) for i, val in enumerate(vals) if val is not None}
         for i, node in nodes.items():
             node.left = nodes.get(2 * i + 1, None)
             node.right = nodes.get(2 * i + 2, None)
-        return nodes and nodes[0]
+        return nodes[0] if nodes else None
 
     def to_vals(self) -> List[int]:
         """Returns the nodes given in row order traversal from `self`"""
-        result = []
+        result: List[int] = []
         nodes = (self,)
         while any(nodes):
             result.extend(node.val if node else None for node in nodes)
             temp = ((node.left, node.right) if node else (None, None) for node in nodes)
-            nodes = tuple(chain.from_iterable(temp))
+            nodes = tuple(chain.from_iterable(temp))  # type: ignore
         while result and result[-1] is None:
             del result[-1]
         return result

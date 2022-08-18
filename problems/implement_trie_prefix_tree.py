@@ -1,6 +1,6 @@
 from typing import Dict, Optional
 
-Graph = Dict[Optional[str], Optional["Graph"]]
+Graph = Dict[Optional[str], Optional["Graph"]]  # type: ignore
 
 
 class Trie:

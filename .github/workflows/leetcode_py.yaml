@@ -14,4 +14,5 @@ jobs:
     - run: pipenv run isort . --profile black --check
     - run: pipenv run black . --check
     - run: pipenv run pylint **/*.py
+    - run: pipenv run mypy . --strict
     - run: pipenv run pytest --verbose

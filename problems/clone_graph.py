@@ -1,7 +1,9 @@
+from typing import Optional
+
 from definitions.node import Node
 
 
-def clone_graph(root: Node) -> Node:
+def clone_graph(root: Optional[Node]) -> Optional[Node]:
     if not root:
         return root
 

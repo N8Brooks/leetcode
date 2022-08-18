@@ -18,14 +18,14 @@ def assert_input_correct(instructions, values):
             raise ValueError(f"instruction {instruction} is not valid")
 
 
-def test_example_1():
+def test_example_1() -> None:
     assert_input_correct(
         ["MinStack", "push", "push", "push", "getMin", "pop", "top", "getMin"],
         [[], [-2], [0], [-3], [-3], [-3], [0], [-2]],
     )
 
 
-def test_typical():
+def test_typical() -> None:
     assert_input_correct(
         [
             "MinStack",
@@ -45,7 +45,7 @@ def test_typical():
     )
 
 
-def test_large():
+def test_large() -> None:
     assert_input_correct(
         [
             "MinStack",
@@ -90,7 +90,7 @@ def test_large():
     )
 
 
-def test_negatives():
+def test_negatives() -> None:
     assert_input_correct(
         [
             "MinStack",
@@ -137,7 +137,7 @@ def test_negatives():
     )
 
 
-def test_repeats():
+def test_repeats() -> None:
     assert_input_correct(
         ["MinStack", "push", "push", "push", "getMin", "top", "pop", "getMin"],
         [[], [-2], [0], [-1], [-2], [-1], [-1], [-2]],

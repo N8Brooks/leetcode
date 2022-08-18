@@ -2,6 +2,8 @@ from collections import Counter
 from itertools import combinations
 from typing import List
 
+# mypy: ignore-errors
+
 
 def three_sum(nums: List[int]) -> List[List[int]]:
     counts = Counter(nums)

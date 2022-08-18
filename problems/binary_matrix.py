@@ -1,5 +1,7 @@
 from typing import List
 
+# mypy: ignore-errors
+
 
 def update_matrix(mat: List[List[int]]) -> List[List[int]]:
     flooded = {

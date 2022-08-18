@@ -1,11 +1,11 @@
 from math import inf
-from typing import Optional
+from typing import List, Optional
 
 from definitions.tree_node import TreeNode
 
 
 def is_valid_bst(node: Optional[TreeNode]) -> bool:
-    stack = []
+    stack: List[TreeNode] = []
     last = TreeNode(-inf)
     while stack or node:
         while node:

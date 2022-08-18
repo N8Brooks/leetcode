@@ -3,8 +3,8 @@ from typing import List
 
 
 def eval_rpn(tokens: List[str]) -> int:
-    operand = None
-    stack = []
+    operand = 0
+    stack: List[int] = []
     for token in tokens:
         if token == "+":
             operand += stack.pop()
