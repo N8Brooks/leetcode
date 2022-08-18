@@ -27,6 +27,7 @@ These checks from the Pipfile dev-packages section should pass. These are checke
 - `pipenv run isort . --profile black`
 - `pipenv run black .`
 - `pipenv run pylint **/*.py`
+- `pipenv run mypy .`
 - `pipenv run pytest` # include the new tests
 
 ## Evaluation
