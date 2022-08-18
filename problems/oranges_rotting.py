@@ -5,7 +5,7 @@ def oranges_rotting(grid: List[List[int]]) -> int:
     rotten = frozenset(
         (x, y) for y, row in enumerate(grid) for x, cell in enumerate(row) if cell == 2
     )
-    minutes = int(not rotten)
+    minutes = -bool(rotten)
     while rotten:
         rotten = frozenset(
             (x, y)
@@ -16,4 +16,4 @@ def oranges_rotting(grid: List[List[int]]) -> int:
         for x, y in rotten:
             grid[y][x] = 2
         minutes += 1
-    return -1 if any(cell == 1 for row in grid for cell in row) else minutes - 1
+    return -1 if any(cell == 1 for row in grid for cell in row) else minutes
