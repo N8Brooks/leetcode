@@ -6,13 +6,8 @@ from definitions.tree_node import TreeNode
 
 def right_side_view(root: Optional[TreeNode]) -> List[int]:
     result = []
-    queue = deque([root] if root else [])
-    while queue:
-        result.append(queue[-1].val)
-        for _ in range(len(queue)):
-            node = queue.popleft()
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
+    row = [root] if root else []
+    while row:
+        result.append(row[-1].val)
+        row = [node for node in row for node in (node.left, node.right) if node]
     return result
