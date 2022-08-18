@@ -15,6 +15,7 @@
         "ldepth",
         "Pipfile",
         "popleft",
-        "preorder",
+        "powerset",
+        "preorder"
     ],
 }
