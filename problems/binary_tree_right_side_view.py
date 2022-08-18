@@ -1,4 +1,3 @@
-from collections import deque
 from typing import List, Optional
 
 from definitions.tree_node import TreeNode
