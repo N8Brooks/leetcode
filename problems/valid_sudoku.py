@@ -3,7 +3,7 @@ from typing import Iterable, List
 
 def is_valid(cells: Iterable[str]):
     nums = [cell for cell in cells if cell != "."]
-    return len(nums) == len(set(nums))
+    return len(nums) == len(frozenset(nums))
 
 
 def sub_boxes(board: List[List[str]]) -> Iterable[Iterable[str]]:
