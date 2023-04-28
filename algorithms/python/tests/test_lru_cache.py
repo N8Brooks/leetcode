@@ -12,7 +12,7 @@ def assert_input_correct(instructions, values):
             case "put":
                 cache.put(value[0], value[1])
             case _:
-                raise Exception(f"{instruction} is not a valid instruction")
+                raise ValueError(f"{instruction} is not a valid instruction")
 
 
 def test_example_1() -> None:
