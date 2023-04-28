@@ -1,18 +1,23 @@
-name: 'leetcode_py'
+name: "leetcode_py"
 
 on: [push]
+
+defaults:
+  run:
+    working-directory: algorithms/python
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-python@v1
-    - uses: dschep/install-pipenv-action@v1
-    - run: pipenv install --dev
-    - run: pipenv run isort . --profile black --check
-    - run: pipenv run black . --check
-    - run: pipenv run pylint **/*.py
-    - run: pipenv run mypy .
-    - run: pipenv run pytest --verbose
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v1
+      - uses: dschep/install-pipenv-action@v1
+
+      - run: pipenv install --dev
+      - run: pipenv run isort . --profile black --check
+      - run: pipenv run black . --check
+      - run: pipenv run pylint **/*.py
+      - run: pipenv run mypy .
+      - run: pipenv run pytest --verbose
