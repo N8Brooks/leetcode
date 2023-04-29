@@ -3,11 +3,11 @@
  * @param {number} depth
  * @return {any[]}
  */
-var flat = function(arr, n) {
+function flat(arr, n) {
   return n
     ? arr.flatMap((arr) => (Array.isArray(arr) ? flat(arr, n - 1) : arr))
     : arr;
-};
+}
 
 it("Case 1", () => {
   expect(

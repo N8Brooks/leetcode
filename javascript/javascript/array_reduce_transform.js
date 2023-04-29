@@ -4,12 +4,12 @@
  * @param {number} init
  * @return {number}
  */
-var reduce = function(nums, fn, init) {
+function reduce(nums, fn, init) {
   for (const num of nums) {
     init = fn(init, num);
   }
   return init;
-};
+}
 
 it("Case 1", () => {
   expect(reduce([1, 2, 3, 4], (accum, curr) => accum + curr, 0)).toBe(10);

@@ -3,13 +3,13 @@
  * @param {number} t milliseconds
  * @return {Function}
  */
-var debounce = function(fn, t) {
+function debounce(fn, t) {
   let id = NaN;
   return (...args) => {
     clearTimeout(id);
     id = setTimeout(() => fn(...args), t);
   };
-};
+}
 
 jest.useFakeTimers();
 

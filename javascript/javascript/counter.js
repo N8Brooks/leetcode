@@ -2,9 +2,9 @@
  * @param {number} n
  * @return {Function} counter
  */
-var createCounter = function(n) {
+function createCounter(n) {
   return () => n++;
-};
+}
 
 it("Case 1", () => {
   const counter = createCounter(10);

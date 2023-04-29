@@ -1,13 +1,13 @@
 /**
  * @return {Generator<number>}
  */
-var fibGenerator = function*() {
+function* fibGenerator() {
   let [a, b] = [0, 1];
   while (true) {
     yield a;
     [a, b] = [b, a + b];
   }
-};
+}
 
 it("Case 1", () => {
   const fib = fibGenerator();
