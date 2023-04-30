@@ -2,8 +2,14 @@
  * @param {Array} arr
  * @return {Generator}
  */
-function* inorderTraversal(arr) {
-  yield* arr.flat(Infinity);
+function* inorderTraversal(_arr) {
+  for (const arr of _arr) {
+    if (Array.isArray(arr)) {
+      yield* inorderTraversal(arr);
+    } else {
+      yield arr;
+    }
+  }
 }
 
 it("Case 1", () => {
